@@ -44,9 +44,37 @@
         return $array;
     }
 
+    function bubbleSort($unsortedArr)
+    {
+        $startTime = microtime(true);
+        $array = $unsortedArr;
+        $flag = true;
+        $n = count($array);
+        while ($flag) {
+            $flag = false;
+            for ($i = 1; $i < $n; $i++) {
+                $a = $array[$i - 1];
+                $b = $array[$i];
+                if ($a > $b) {
+                    $array[$i - 1] = $b;
+                    $array[$i] = $a;
+                    $flag = $flag + 1;
+                }
+            }
+        }
+        echo "Time:  " . (number_format((microtime(true) - $startTime), 8) * 1000) . " ms\n", '</br>';
+        return $array;
+    }
+
     echo '</br>', '</br>';
     echo 'sorted array (insertionSort):', '</br>';
     foreach (insertionSort($unsortedArr) as $k => $v) {
+        echo '[', $k, ']', '=', $v, ';', '&nbsp &nbsp &nbsp';
+    }
+
+    echo '</br>', '</br>';
+    echo 'sorted array (bubbleSort):', '</br>';
+    foreach (bubbleSort($unsortedArr) as $k => $v) {
         echo '[', $k, ']', '=', $v, ';', '&nbsp &nbsp &nbsp';
     }
 
