@@ -15,7 +15,7 @@ echo "Соединение с MySQL установлено!" . PHP_EOL;
 echo "Информация о сервере: " . mysqli_get_host_info($link) . PHP_EOL;
 
 
-// delete data
+//                                delete data
 $sql = "DELETE FROM users WHERE id = 5";
 $result = $link->query($sql);
 
@@ -54,34 +54,10 @@ if ($result->num_rows > 0) {
              " - lastName: ".$row["lastName"].
              " - age: ".$row["age"].
              " - gender: ".$row["gender"]."<br>";
-
-/*      $email = filter_input(INPUT_POST, 'email');
-        $password = filter_input(INPUT_POST, 'password');
-        $repeatPassword = filter_input(INPUT_POST, 'repeatPassword');
-        $firstName = filter_input(INPUT_POST, 'firstName');
-        $lastName = filter_input(INPUT_POST, 'lastName');
-        $age = filter_input(INPUT_POST, 'age');
-        $gender = filter_input(INPUT_POST, 'gender');*/
-
     }
 } else {
     echo "NULL results";
-
 }
-
-
-
-
 
 mysqli_close($link);
 ?>
-
-<!--/*$username = filter_input(INPUT_POST, 'username');
-$email = filter_input(INPUT_POST, 'email');
-$password = filter_input(INPUT_POST, 'password');
-$repeatPassword = filter_input(INPUT_POST, 'repeatPassword');
-$firstName = filter_input(INPUT_POST, 'firstName');
-$lastName = filter_input(INPUT_POST, 'lastName');
-$age = filter_input(INPUT_POST, 'age');
-$gender = filter_input(INPUT_POST, 'gender');*/
--->
