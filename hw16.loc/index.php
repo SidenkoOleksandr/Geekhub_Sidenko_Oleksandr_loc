@@ -11,8 +11,7 @@ include 'head.php';
 </header>
 <main>
     <div class="container w-50">
-         <form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
-        <!--<form action="process.php" method="POST">-->
+         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="form-row my-3">
                 <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-10">
